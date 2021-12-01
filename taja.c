@@ -39,27 +39,27 @@ int endpg(char, int, int, int, int);
 void Box(int x1, int y1, int x2, int y2, int COLOR) {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), COLOR);
 	
-	// »ó´Ü (¦£¦¡¦¡¦¡¦¤)
-	gotoXY(x1, y1); printf("¦£");
-	for (i=1; i<(x2 - x1) - 1; i++) printf("¦¡"); 
-	printf("¦¤");
+	// ìƒë‹¨ (â”Œâ”€â”€â”€â”)
+	gotoXY(x1, y1); printf("â”Œ");
+	for (i=1; i<(x2 - x1) - 1; i++) printf("â”€"); 
+	printf("â”");
 
-	// Áß´Ü (¦¢   ¦¢)
+	// ì¤‘ë‹¨ (â”‚   â”‚)
 	for (i=1; i<(y2 - y1); i++) {
-		gotoXY(x1, y1 + i); printf("¦¢");
-		gotoXY(x2 - 1, y1 + i); printf("¦¢");
+		gotoXY(x1, y1 + i); printf("â”‚");
+		gotoXY(x2 - 1, y1 + i); printf("â”‚");
 	}
 
-	// ÇÏ´Ü (¦¦¦¡¦¡¦¡¦¥)
-	gotoXY(x1, y2); printf("¦¦");
-	for (i=1; i<(x2 - x1) - 1; i++) printf("¦¡");
-	printf("¦¥");
+	// í•˜ë‹¨ (â””â”€â”€â”€â”˜)
+	gotoXY(x1, y2); printf("â””");
+	for (i=1; i<(x2 - x1) - 1; i++) printf("â”€");
+	printf("â”˜");
 
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 }
 void disp(int left, int correct, int wrong) {
-	gotoXY(42, 5); printf("Å¸ÀÌ¸Ó : %04d		³²Àº °³¼ö : %3d", (int)start/CLOCKS_PER_SEC, left);
-	gotoXY(48, 7); printf("Á¤´ä : %3d	¿À´ä : %3d", correct, wrong);
+	gotoXY(42, 5); printf("íƒ€ì´ë¨¸ : %04d		ë‚¨ì€ ê°œìˆ˜ : %3d", (int)start/CLOCKS_PER_SEC, left);
+	gotoXY(48, 7); printf("ì •ë‹µ : %3d	ì˜¤ë‹µ : %3d", correct, wrong);
 	gotoXY(15, 25);
 }
 
@@ -70,31 +70,31 @@ int letter(char type){
 
 	system("cls");
 
-	gotoXY(53, 4); printf("ÀÚ  ¸®  ¿¬  ½À");
+	gotoXY(53, 4); printf("ì  ë¦¬  ì—°  ìŠµ");
 	
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
-	gotoXY(75, 28); puts("¹æÇâÅ°·Î Ä¿¼­¸¦ ÀÌµ¿, ¿£ÅÍ·Î ¼±ÅÃÇÏ¼¼¿ä.");
+	gotoXY(75, 28); puts("ë°©í–¥í‚¤ë¡œ ì»¤ì„œë¥¼ ì´ë™, ì—”í„°ë¡œ ì„ íƒí•˜ì„¸ìš”.");
 
 	while (1) {
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
-		gotoXY(x1, y[now]); printf("¢º");
-		gotoXY(x2, y[now]); printf("¢¸");
+		gotoXY(x1, y[now]); printf("â–¶");
+		gotoXY(x2, y[now]); printf("â—€");
 		
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
-		gotoXY(48, 9); puts("¿¬½À ÇÒ ¾ğ¾î¸¦ ¼±ÅÃÇÏ¼¼¿ä.");
+		gotoXY(48, 9); puts("ì—°ìŠµ í•  ì–¸ì–´ë¥¼ ì„ íƒí•˜ì„¸ìš”.");
 		Box(20, 8, 100, 10, WHITE);
 		
 		if (now == 0) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 		else SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GRAY);
-		gotoXY(x1 + 6, y[0]); printf("ÇÑ  ±Û");
+		gotoXY(x1 + 6, y[0]); printf("í•œ  ê¸€");
 		
 		if (now == 1) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 		else SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GRAY);
-		gotoXY(x1 + 6, y[1]); printf("¿µ  ¾î");
+		gotoXY(x1 + 6, y[1]); printf("ì˜  ì–´");
 
 		if (now == 2) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 		else SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GRAY);
-		gotoXY(x1 + 5, y[2]); printf("µÚ·Î°¡±â");
+		gotoXY(x1 + 5, y[2]); printf("ë’¤ë¡œê°€ê¸°");
 		Box(46, 17, 73, 23, WHITE);
 		puts(" ");
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
@@ -122,7 +122,7 @@ int letter(char type){
 			}
 			continue;
 		}
-		// ¼±ÅÃ È¤Àº Á¾·á
+		// ì„ íƒ í˜¹ì€ ì¢…ë£Œ
 		else if (c == 13) break;
 		else if (c == 27) {
 			now = -1;
@@ -146,10 +146,10 @@ int e_letter(char type){
 	
 	system("cls");
 
-	gotoXY(48, 2); printf("ÀÚ ¸®  ¿¬  ½À  -  ¿µ  ¾î");
+	gotoXY(48, 2); printf("ì ë¦¬  ì—°  ìŠµ  -  ì˜  ì–´");
 	
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
-	gotoXY(55, 28); puts("¹®Á¦´Â ÃÊ·Ï»öÀ¸·Î Ç¥½Ã, Á¤´ä ÀÔ·Â ÈÄ ¿£ÅÍ¸¦ ´­·¯ ÁøÇàÇÕ´Ï´Ù.");
+	gotoXY(55, 28); puts("ë¬¸ì œëŠ” ì´ˆë¡ìƒ‰ìœ¼ë¡œ í‘œì‹œ, ì •ë‹µ ì…ë ¥ í›„ ì—”í„°ë¥¼ ëˆŒëŸ¬ ì§„í–‰í•©ë‹ˆë‹¤.");
 	
 	Box(15, 9, 105, 19, WHITE);
 	
@@ -174,7 +174,7 @@ int e_letter(char type){
 			random = ((rand() % 33) + 1);	
 		}
 		if(et == NULL){
-			printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+			printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 		}
 		else{
 			for(i=1; i<33; i++){
@@ -194,7 +194,7 @@ int e_letter(char type){
 			random = ((rand() % 33) + 1);	
 		}
 		if(et == NULL){
-			printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+			printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 		}
 		else{
 			for(i=1; i<33; i++){
@@ -214,7 +214,7 @@ int e_letter(char type){
 			random = ((rand() % 33) + 1);	
 		}
 		if(et == NULL){
-			printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+			printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 		}
 		else{
 			for(i=1; i<33; i++){
@@ -234,7 +234,7 @@ int e_letter(char type){
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 	Box(3, 24, 116, 26, WHITE);
 	gotoXY(5, 25);
-	printf("ÀÔ·Â : %50c", ' ');
+	printf("ì…ë ¥ : %50c", ' ');
 	gotoXY(15, 25);
 	disp(left, correct, wrong); 
 	
@@ -242,21 +242,21 @@ int e_letter(char type){
 	while (1) {
 		if (_kbhit()) {
 			ch = _getch();
-			// ¹é½ºÆäÀÌ½º
+			// ë°±ìŠ¤í˜ì´ìŠ¤
 			if (ch == 27) return 0;
 			if (ch == 8) {
 				if (count > 0) {
-					// ½ºÆäÀÌ½º¸é ÇÑ Ä­ »èÁ¦ 
+					// ìŠ¤í˜ì´ìŠ¤ë©´ í•œ ì¹¸ ì‚­ì œ 
 					if (input[count - 1] == ' ') {
 						input[count - 1] = NULL;
 						count -= 1;
 					}
-					// ¿µ¾î¸é ÇÑ Ä­ »èÁ¦ 
+					// ì˜ì–´ë©´ í•œ ì¹¸ ì‚­ì œ 
 					else if (('z' >= input[count - 1] && input[count - 1] >= 'a') || ('Z' >= input[count - 1] && input[count - 1] >= 'A')) {
 						input[count - 1] = NULL;
 						count -= 1;
 					}
-					// ÇÑ±ÛÀÌ¸é µÎ Ä­ »èÁ¦ 
+					// í•œê¸€ì´ë©´ ë‘ ì¹¸ ì‚­ì œ 
 					else {
 						input[count - 2] = NULL;
 						input[count - 1] = NULL;
@@ -270,9 +270,9 @@ int e_letter(char type){
 				}
 			}
 
-			// ¿£ÅÍ Ã³¸®
+			// ì—”í„° ì²˜ë¦¬
 			else if (ch == 13) {
-				// ÀÏÄ¡ÇÏ¸é Á¤´ä
+				// ì¼ì¹˜í•˜ë©´ ì •ë‹µ
 				if(strcmp(input, answer) == 0){
 					FLAG = 1;
 					correct += 1;
@@ -288,18 +288,18 @@ int e_letter(char type){
 					left -= 1;
 
 					gotoXY(5, 25);
-					printf("ÀÔ·Â : %50c", ' ');
+					printf("ì…ë ¥ : %50c", ' ');
 					gotoXY(15, 25);
 				}
 			}
 
 			else {
-				// ÇÑ±Û 2Byte - µÎ Ä­ ÀúÀå 
+				// í•œê¸€ 2Byte - ë‘ ì¹¸ ì €ì¥ 
 				input[count++] = ch;
 				if (_kbhit()) {
 					ch = _getch();
 					input[count++] = ch;
-					// ÇÑ±Û µÎ ¹ÙÀÌÆ®¸¦ ÇÔ²² Ãâ·Â
+					// í•œê¸€ ë‘ ë°”ì´íŠ¸ë¥¼ í•¨ê»˜ ì¶œë ¥
 					printf("%c", input[count - 2]);
 				}
 				printf("%c\b ", input[count - 1]);
@@ -317,7 +317,7 @@ int e_letter(char type){
 		else if (FLAG == 1) {
 			Box(3, 24, 116, 26, WHITE);
 			gotoXY(5, 25);
-			printf("ÀÔ·Â : %50c", ' ');
+			printf("ì…ë ¥ : %50c", ' ');
 			
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GREEN);
 			gotoXY(58, 21);
@@ -327,7 +327,7 @@ int e_letter(char type){
 					random = ((rand() % 33) + 1);	
 				}
 				if(et == NULL){
-					printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+					printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 				}
 				else{
 					for(i=1; i<33; i++){
@@ -345,7 +345,7 @@ int e_letter(char type){
 					random = ((rand() % 33) + 1);	
 				}
 				if(et == NULL){
-					printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+					printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 				}
 				else{
 					for(i=1; i<33; i++){
@@ -363,7 +363,7 @@ int e_letter(char type){
 					random = ((rand() % 33) + 1);	
 				}
 				if(et == NULL){
-					printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+					printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 				}
 				else{
 					for(i=1; i<33; i++){
@@ -407,10 +407,10 @@ int k_letter(char type){
 	
 	system("cls");
 
-	gotoXY(48, 2); printf("ÀÚ ¸®  ¿¬  ½À  -  ÇÑ  ±Û");
+	gotoXY(48, 2); printf("ì ë¦¬  ì—°  ìŠµ  -  í•œ  ê¸€");
 	
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
-	gotoXY(55, 28); puts("¹®Á¦´Â ÃÊ·Ï»öÀ¸·Î Ç¥½Ã, Á¤´ä ÀÔ·Â ÈÄ ¿£ÅÍ¸¦ ´­·¯ ÁøÇàÇÕ´Ï´Ù.");
+	gotoXY(55, 28); puts("ë¬¸ì œëŠ” ì´ˆë¡ìƒ‰ìœ¼ë¡œ í‘œì‹œ, ì •ë‹µ ì…ë ¥ í›„ ì—”í„°ë¥¼ ëˆŒëŸ¬ ì§„í–‰í•©ë‹ˆë‹¤.");
 	
 	Box(15, 9, 105, 19, WHITE);
 	
@@ -435,7 +435,7 @@ int k_letter(char type){
 			random = ((rand() % 33) + 1);	
 		}
 		if(et == NULL){
-			printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+			printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 		}
 		else{
 			for(i=1; i<33; i++){
@@ -455,7 +455,7 @@ int k_letter(char type){
 			random = ((rand() % 33) + 1);	
 		}
 		if(et == NULL){
-			printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+			printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 		}
 		else{
 			for(i=1; i<33; i++){
@@ -475,7 +475,7 @@ int k_letter(char type){
 			random = ((rand() % 33) + 1);	
 		}
 		if(et == NULL){
-			printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+			printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 		}
 		else{
 			for(i=1; i<33; i++){
@@ -495,7 +495,7 @@ int k_letter(char type){
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 //	Box(3, 24, 116, 26, WHITE);
 	gotoXY(5, 25);
-	printf("ÀÔ·Â : %50c", ' ');
+	printf("ì…ë ¥ : %50c", ' ');
 	gotoXY(15, 25);
 	disp(left, correct, wrong); 
 	
@@ -543,7 +543,7 @@ int k_letter(char type){
 					left -= 1;
 
 					gotoXY(5, 25);
-					printf("ÀÔ·Â : %50c", ' ');
+					printf("ì…ë ¥ : %50c", ' ');
 					gotoXY(15, 25);
 				}
 			}
@@ -568,7 +568,7 @@ int k_letter(char type){
 		else if (FLAG == 1) {
 			Box(3, 24, 116, 26, WHITE);
 			gotoXY(5, 25);
-			printf("ÀÔ·Â : %50c", ' ');
+			printf("ì…ë ¥ : %50c", ' ');
 			
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GREEN);
 			gotoXY(58, 21);
@@ -578,7 +578,7 @@ int k_letter(char type){
 					random = ((rand() % 33) + 1);	
 				}
 				if(et == NULL){
-					printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+					printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 				}
 				else{
 					for(i=1; i<33; i++){
@@ -596,7 +596,7 @@ int k_letter(char type){
 					random = ((rand() % 33) + 1);	
 				}
 				if(et == NULL){
-					printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+					printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 				}
 				else{
 					for(i=1; i<33; i++){
@@ -614,7 +614,7 @@ int k_letter(char type){
 					random = ((rand() % 33) + 1);	
 				}
 				if(et == NULL){
-					printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+					printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 				}
 				else{
 					for(i=1; i<33; i++){
@@ -650,38 +650,38 @@ int word(char type){
 
 	system("cls");
 
-	gotoXY(53, 4); printf("´Ü  ¾î  ¿¬  ½À");
+	gotoXY(53, 4); printf("ë‹¨  ì–´  ì—°  ìŠµ");
 	
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
-	gotoXY(75, 28); puts("¹æÇâÅ°·Î Ä¿¼­¸¦ ÀÌµ¿, ¿£ÅÍ·Î ¼±ÅÃÇÏ¼¼¿ä.");
+	gotoXY(75, 28); puts("ë°©í–¥í‚¤ë¡œ ì»¤ì„œë¥¼ ì´ë™, ì—”í„°ë¡œ ì„ íƒí•˜ì„¸ìš”.");
 
 	while (1) {
-		// È­»ìÇ¥ Ãâ·Â
+		// í™”ì‚´í‘œ ì¶œë ¥
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
-		gotoXY(x1, y[now]); printf("¢º");
-		gotoXY(x2, y[now]); printf("¢¸");
+		gotoXY(x1, y[now]); printf("â–¶");
+		gotoXY(x2, y[now]); printf("â—€");
 		
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
-		gotoXY(48, 9); puts("¿¬½À ÇÒ ¾ğ¾î¸¦ ¼±ÅÃÇÏ¼¼¿ä.");
+		gotoXY(48, 9); puts("ì—°ìŠµ í•  ì–¸ì–´ë¥¼ ì„ íƒí•˜ì„¸ìš”.");
 		Box(20, 8, 100, 10, WHITE);
 		
-		// ¸Ş´º Ãâ·Â
+		// ë©”ë‰´ ì¶œë ¥
 		if (now == 0) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 		else SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GRAY);
-		gotoXY(x1 + 6, y[0]); printf("ÇÑ  ±Û");
+		gotoXY(x1 + 6, y[0]); printf("í•œ  ê¸€");
 		
 		if (now == 1) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 		else SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GRAY);
-		gotoXY(x1 + 6, y[1]); printf("¿µ  ¾î");
+		gotoXY(x1 + 6, y[1]); printf("ì˜  ì–´");
 
 		if (now == 2) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 		else SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GRAY);
-		gotoXY(x1 + 5, y[2]); printf("µÚ·Î°¡±â");
+		gotoXY(x1 + 5, y[2]); printf("ë’¤ë¡œê°€ê¸°");
 		Box(46, 17, 73, 23, WHITE);
 		puts(" ");
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 
-		// ¹æÇâÅ°¸¦ ÀÔ·ÂÇÏ¸é ¸Ş´º ¼±ÅÃµÇµµ·Ï
+		// ë°©í–¥í‚¤ë¥¼ ì…ë ¥í•˜ë©´ ë©”ë‰´ ì„ íƒë˜ë„ë¡
 		c = _getch();
 		if (c == 0x00 || c == 0xE0) c = _getch();
 		if (c == 80 || c == 72) {
@@ -705,7 +705,7 @@ int word(char type){
 			}
 			continue;
 		}
-		// ¼±ÅÃ È¤Àº Á¾·á
+		// ì„ íƒ í˜¹ì€ ì¢…ë£Œ
 		else if (c == 13) break;
 		else if (c == 27) {
 			now = -1;
@@ -727,10 +727,10 @@ int e_word(char type){
 	
 	system("cls");
 	
-	gotoXY(47, 2); printf("´Ü ¾î  ¿¬  ½À  -  ¿µ  ¾î");
+	gotoXY(47, 2); printf("ë‹¨ ì–´  ì—°  ìŠµ  -  ì˜  ì–´");
 	
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
-	gotoXY(55, 28); puts("¹®Á¦´Â ÃÊ·Ï»öÀ¸·Î Ç¥½Ã, Á¤´ä ÀÔ·Â ÈÄ ¿£ÅÍ¸¦ ´­·¯ ÁøÇàÇÕ´Ï´Ù.");
+	gotoXY(55, 28); puts("ë¬¸ì œëŠ” ì´ˆë¡ìƒ‰ìœ¼ë¡œ í‘œì‹œ, ì •ë‹µ ì…ë ¥ í›„ ì—”í„°ë¥¼ ëˆŒëŸ¬ ì§„í–‰í•©ë‹ˆë‹¤.");
 	Box(20, 4, 100, 8, WHITE);
 	gotoXY(57, 16);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GREEN);
@@ -746,7 +746,7 @@ int e_word(char type){
 			random = ((rand() % 50) + 1);	
 		}
 		if(et == NULL){
-			printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+			printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 		}
 		else{
 			for(i=0; i<50; i++){
@@ -768,7 +768,7 @@ int e_word(char type){
 			random = ((rand() % 50) + 1);	
 		}
 		if(et == NULL){
-			printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+			printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 		}
 		else{
 			for(i=0; i<50; i++){
@@ -790,7 +790,7 @@ int e_word(char type){
 			random = ((rand() % 50) + 1);	
 		}
 		if(et == NULL){
-			printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+			printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 		}
 		else{
 			for(i=0; i<50; i++){
@@ -813,7 +813,7 @@ int e_word(char type){
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 	Box(3, 24, 116, 26, WHITE);
 	gotoXY(5, 25);
-	printf("ÀÔ·Â : %50c", ' ');
+	printf("ì…ë ¥ : %50c", ' ');
 	gotoXY(15, 25);
 	disp(left, correct, wrong); 
 	
@@ -845,9 +845,9 @@ int e_word(char type){
 				}
 			}
 
-			// ¿£ÅÍ
+			// ì—”í„°
 			else if (ch == 13) {
-				//answer (\n) Á¦°Å, ¾øÀ¸¸é ÀÚ²Ù Æ²¸² 
+				//answer (\n) ì œê±°, ì—†ìœ¼ë©´ ìê¾¸ í‹€ë¦¼ 
 				gotoXY(57, 15);	
 				char *ptr = answer[0];
 				while(*ptr != '\n') {
@@ -855,7 +855,7 @@ int e_word(char type){
 				}
 				*ptr = '\0';
 //				printf("%d", strcmp(input, answer[0]));
-				// Á¤´ä
+				// ì •ë‹µ
 				if(strcmp(input, answer[0])== 0) {
 					FLAG = 1;
 					correct += 1;
@@ -871,12 +871,12 @@ int e_word(char type){
 					left -= 1;
 
 					gotoXY(5, 25);
-					printf("ÀÔ·Â : %50c", ' ');
+					printf("ì…ë ¥ : %50c", ' ');
 					gotoXY(15, 25);
 				}
 			}
 
-			// ¹®ÀÚ ÀÔ·Â
+			// ë¬¸ì ì…ë ¥
 			else {
 				input[count++] = ch;
 				if (_kbhit()) {
@@ -901,7 +901,7 @@ int e_word(char type){
 			Box(15, 9, 105, 23, WHITE);
 			Box(3, 24, 116, 26, WHITE);
 			gotoXY(5, 25);
-			printf("ÀÔ·Â : %50c", ' ');
+			printf("ì…ë ¥ : %50c", ' ');
 			
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GREEN);
 			gotoXY(57, 16);
@@ -912,7 +912,7 @@ int e_word(char type){
 					random = ((rand() % 50) + 1);	
 				}
 				if(et == NULL){
-					printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+					printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 				}
 				else{
 					for(i=0; i<1; i++){
@@ -927,7 +927,7 @@ int e_word(char type){
 					random = ((rand() % 50) + 1);	
 				}
 				if(et == NULL){
-					printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+					printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 				}
 				else{
 					for(i=0; i<1; i++){
@@ -942,7 +942,7 @@ int e_word(char type){
 					random = ((rand() % 50) + 1);	
 				}
 				if(et == NULL){
-					printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+					printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 				}
 				else{
 					for(i=0; i<1; i++){
@@ -981,10 +981,10 @@ int k_word(char type){
 	
 	system("cls");
 	
-	gotoXY(47, 2); printf("´Ü ¾î  ¿¬  ½À  -  ÇÑ  ±Û");
+	gotoXY(47, 2); printf("ë‹¨ ì–´  ì—°  ìŠµ  -  í•œ  ê¸€");
 	
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
-	gotoXY(55, 28); puts("¹®Á¦´Â ÃÊ·Ï»öÀ¸·Î Ç¥½Ã, Á¤´ä ÀÔ·Â ÈÄ ¿£ÅÍ¸¦ ´­·¯ ÁøÇàÇÕ´Ï´Ù.");
+	gotoXY(55, 28); puts("ë¬¸ì œëŠ” ì´ˆë¡ìƒ‰ìœ¼ë¡œ í‘œì‹œ, ì •ë‹µ ì…ë ¥ í›„ ì—”í„°ë¥¼ ëˆŒëŸ¬ ì§„í–‰í•©ë‹ˆë‹¤.");
 	Box(20, 4, 100, 8, WHITE);
 	gotoXY(57, 16);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GREEN);
@@ -1000,7 +1000,7 @@ int k_word(char type){
 			random = ((rand() % 50) + 1);	
 		}
 		if(kt == NULL){
-			printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+			printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 		}
 		else{
 			for(i=0; i<50; i++){
@@ -1022,7 +1022,7 @@ int k_word(char type){
 			random = ((rand() % 50) + 1);	
 		}
 		if(kt == NULL){
-			printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+			printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 		}
 		else{
 			for(i=0; i<50; i++){
@@ -1044,7 +1044,7 @@ int k_word(char type){
 			random = ((rand() % 50) + 1);	
 		}
 		if(kt == NULL){
-			printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+			printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 		}
 		else{
 			for(i=0; i<50; i++){
@@ -1067,7 +1067,7 @@ int k_word(char type){
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 	Box(3, 24, 116, 26, WHITE);
 	gotoXY(5, 25);
-	printf("ÀÔ·Â : %50c", ' ');
+	printf("ì…ë ¥ : %50c", ' ');
 	gotoXY(15, 25);
 	disp(left, correct, wrong); 
 	
@@ -1098,9 +1098,9 @@ int k_word(char type){
 				}
 			}
 
-			// ¿£ÅÍ
+			// ì—”í„°
 			else if (ch == 13) {
-				//answer (\n) Á¦°Å, ¾øÀ¸¸é ÀÚ²Ù Æ²¸² 
+				//answer (\n) ì œê±°, ì—†ìœ¼ë©´ ìê¾¸ í‹€ë¦¼ 
 				gotoXY(57, 15);	
 				char *ptr = answer[0];
 				while(*ptr != '\n') {
@@ -1108,7 +1108,7 @@ int k_word(char type){
 				}
 				*ptr = '\0';
 //				printf("%d", strcmp(input, answer[0]));
-				// Á¤´ä
+				// ì •ë‹µ
 				if(strcmp(input, answer[0])== 0) {
 					FLAG = 1;
 					correct += 1;
@@ -1124,12 +1124,12 @@ int k_word(char type){
 					left -= 1;
 
 					gotoXY(5, 25);
-					printf("ÀÔ·Â : %50c", ' ');
+					printf("ì…ë ¥ : %50c", ' ');
 					gotoXY(15, 25);
 				}
 			}
 
-			// ¹®ÀÚ ÀÔ·Â
+			// ë¬¸ì ì…ë ¥
 			else {
 				input[count++] = ch;
 				ch = _getch();
@@ -1151,7 +1151,7 @@ int k_word(char type){
 			Box(15, 9, 105, 23, WHITE);
 			Box(3, 24, 116, 26, WHITE);
 			gotoXY(5, 25);
-			printf("ÀÔ·Â : %50c", ' ');
+			printf("ì…ë ¥ : %50c", ' ');
 			
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GREEN);
 			gotoXY(57, 16);
@@ -1162,7 +1162,7 @@ int k_word(char type){
 					random = ((rand() % 50) + 1);	
 				}
 				if(kt == NULL){
-					printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+					printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 				}
 				else{
 					for(i=0; i<1; i++){
@@ -1177,7 +1177,7 @@ int k_word(char type){
 					random = ((rand() % 50) + 1);	
 				}
 				if(kt == NULL){
-					printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+					printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 				}
 				else{
 					for(i=0; i<1; i++){
@@ -1192,7 +1192,7 @@ int k_word(char type){
 					random = ((rand() % 50) + 1);	
 				}
 				if(kt == NULL){
-					printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+					printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 				}
 				else{
 					for(i=0; i<1; i++){
@@ -1225,31 +1225,31 @@ int s_text(char type){
 
 	system("cls");
 
-	gotoXY(52, 4); printf("Âª Àº  ±Û  ¿¬  ½À");
+	gotoXY(52, 4); printf("ì§§ ì€  ê¸€  ì—°  ìŠµ");
 	
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
-	gotoXY(75, 28); puts("¹æÇâÅ°·Î Ä¿¼­¸¦ ÀÌµ¿, ¿£ÅÍ·Î ¼±ÅÃÇÏ¼¼¿ä.");
+	gotoXY(75, 28); puts("ë°©í–¥í‚¤ë¡œ ì»¤ì„œë¥¼ ì´ë™, ì—”í„°ë¡œ ì„ íƒí•˜ì„¸ìš”.");
 
 	while (1) {
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
-		gotoXY(x1, y[now]); printf("¢º");
-		gotoXY(x2, y[now]); printf("¢¸");
+		gotoXY(x1, y[now]); printf("â–¶");
+		gotoXY(x2, y[now]); printf("â—€");
 		
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
-		gotoXY(48, 9); puts("¿¬½À ÇÒ ¾ğ¾î¸¦ ¼±ÅÃÇÏ¼¼¿ä.");
+		gotoXY(48, 9); puts("ì—°ìŠµ í•  ì–¸ì–´ë¥¼ ì„ íƒí•˜ì„¸ìš”.");
 		Box(20, 8, 100, 10, WHITE);
 		
 		if (now == 0) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 		else SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GRAY);
-		gotoXY(x1 + 6, y[0]); printf("ÇÑ  ±Û");
+		gotoXY(x1 + 6, y[0]); printf("í•œ  ê¸€");
 		
 		if (now == 1) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 		else SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GRAY);
-		gotoXY(x1 + 6, y[1]); printf("¿µ  ¾î");
+		gotoXY(x1 + 6, y[1]); printf("ì˜  ì–´");
 
 		if (now == 2) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 		else SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GRAY);
-		gotoXY(x1 + 5, y[2]); printf("µÚ·Î°¡±â");
+		gotoXY(x1 + 5, y[2]); printf("ë’¤ë¡œê°€ê¸°");
 		Box(46, 17, 73, 23, WHITE);
 		puts(" ");
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
@@ -1277,7 +1277,7 @@ int s_text(char type){
 			}
 			continue;
 		}
-		// ¼±ÅÃ È¤Àº Á¾·á
+		// ì„ íƒ í˜¹ì€ ì¢…ë£Œ
 		else if (c == 13) break;
 		else if (c == 27) {
 			now = -1;
@@ -1300,10 +1300,10 @@ int e_s_text(char type){
 	
 	system("cls");
 	
-	gotoXY(45, 2); printf("ÂªÀº ±Û  ¿¬  ½À  -  ¿µ  ¾î");
+	gotoXY(45, 2); printf("ì§§ì€ ê¸€  ì—°  ìŠµ  -  ì˜  ì–´");
 	
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
-	gotoXY(55, 28); puts("¹®Á¦´Â ÃÊ·Ï»öÀ¸·Î Ç¥½Ã, Á¤´ä ÀÔ·Â ÈÄ ¿£ÅÍ¸¦ ´­·¯ ÁøÇàÇÕ´Ï´Ù.");
+	gotoXY(55, 28); puts("ë¬¸ì œëŠ” ì´ˆë¡ìƒ‰ìœ¼ë¡œ í‘œì‹œ, ì •ë‹µ ì…ë ¥ í›„ ì—”í„°ë¥¼ ëˆŒëŸ¬ ì§„í–‰í•©ë‹ˆë‹¤.");
 	Box(20, 4, 100, 8, WHITE);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GREEN);
 
@@ -1319,7 +1319,7 @@ int e_s_text(char type){
 			random = ((rand() % 50) + 1);	
 		}
 		if(et == NULL){
-			printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+			printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 		}
 		else{
 			for(i=0; i<50; i++){
@@ -1343,7 +1343,7 @@ int e_s_text(char type){
 			random = ((rand() % 50) + 1);	
 		}
 		if(et == NULL){
-			printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+			printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 		}
 		else{
 			for(i=0; i<50; i++){
@@ -1367,7 +1367,7 @@ int e_s_text(char type){
 			random = ((rand() % 50) + 1);	
 		}
 		if(et == NULL){
-			printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+			printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 		}
 		else{
 			for(i=0; i<50; i++){
@@ -1392,7 +1392,7 @@ int e_s_text(char type){
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 	Box(3, 24, 116, 26, WHITE);
 	gotoXY(5, 25);
-	printf("ÀÔ·Â : %100c", ' ');
+	printf("ì…ë ¥ : %100c", ' ');
 	gotoXY(15, 25);
 	disp(left, correct, wrong); 
 	
@@ -1424,9 +1424,9 @@ int e_s_text(char type){
 				}
 			}
 
-			// ¿£ÅÍ
+			// ì—”í„°
 			else if (ch == 13) {
-				//answer (\n) Á¦°Å, ¾øÀ¸¸é ÀÚ²Ù Æ²¸² 
+				//answer (\n) ì œê±°, ì—†ìœ¼ë©´ ìê¾¸ í‹€ë¦¼ 
 				gotoXY(57, 15);	
 				char *ptr = answer[0];
 				while(*ptr != '\n') {
@@ -1434,7 +1434,7 @@ int e_s_text(char type){
 				}
 				*ptr = '\0';
 //				printf("%d", strcmp(input, answer[0]));
-				// Á¤´ä
+				// ì •ë‹µ
 				if(strcmp(input, answer[0])== 0) {
 					FLAG = 1;
 					correct += 1;
@@ -1450,19 +1450,19 @@ int e_s_text(char type){
 					left -= 1;
 
 					gotoXY(5, 25);
-					printf("ÀÔ·Â : %100c", ' ');
+					printf("ì…ë ¥ : %100c", ' ');
 					gotoXY(15, 25);
 				}
-				//È­¸éÀÇ ³²´Â ±ÛÀÚ Á¦°Å 
+				//í™”ë©´ì˜ ë‚¨ëŠ” ê¸€ì ì œê±° 
 				system("cls");
-				gotoXY(45, 2); printf("ÂªÀº ±Û  ¿¬  ½À  -  ¿µ  ¾î");
+				gotoXY(45, 2); printf("ì§§ì€ ê¸€  ì—°  ìŠµ  -  ì˜  ì–´");
 				Box(20, 4, 100, 8, WHITE);
 				Box(15, 9, 105, 23, WHITE);
 				Box(3, 24, 116, 26, WHITE);
-				gotoXY(55, 28); puts("¹®Á¦´Â ÃÊ·Ï»öÀ¸·Î Ç¥½Ã, Á¤´ä ÀÔ·Â ÈÄ ¿£ÅÍ¸¦ ´­·¯ ÁøÇàÇÕ´Ï´Ù.");
+				gotoXY(55, 28); puts("ë¬¸ì œëŠ” ì´ˆë¡ìƒ‰ìœ¼ë¡œ í‘œì‹œ, ì •ë‹µ ì…ë ¥ í›„ ì—”í„°ë¥¼ ëˆŒëŸ¬ ì§„í–‰í•©ë‹ˆë‹¤.");
 			}
 
-			// ¹®ÀÚ ÀÔ·Â
+			// ë¬¸ì ì…ë ¥
 			else {
 				input[count++] = ch;
 				if (_kbhit()) {
@@ -1487,7 +1487,7 @@ int e_s_text(char type){
 			Box(15, 9, 105, 23, WHITE);
 			Box(3, 24, 116, 26, WHITE);
 			gotoXY(5, 25);
-			printf("ÀÔ·Â : %100c", ' ');
+			printf("ì…ë ¥ : %100c", ' ');
 			
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GREEN);
 			
@@ -1497,7 +1497,7 @@ int e_s_text(char type){
 					random = ((rand() % 50) + 1);	
 				}
 				if(et == NULL){
-					printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+					printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 				}
 				else{
 					for(i=0; i<1; i++){
@@ -1514,7 +1514,7 @@ int e_s_text(char type){
 					random = ((rand() % 50) + 1);	
 				}
 				if(et == NULL){
-					printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+					printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 				}
 				else{
 					for(i=0; i<1; i++){
@@ -1531,7 +1531,7 @@ int e_s_text(char type){
 					random = ((rand() % 50) + 1);	
 				}
 				if(et == NULL){
-					printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+					printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 				}
 				else{
 					for(i=0; i<1; i++){
@@ -1573,10 +1573,10 @@ int k_s_text(char type){
 	
 	system("cls");
 	
-	gotoXY(45, 2); printf("ÂªÀº ±Û  ¿¬  ½À  -  ÇÑ  ±Û");
+	gotoXY(45, 2); printf("ì§§ì€ ê¸€  ì—°  ìŠµ  -  í•œ  ê¸€");
 	
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
-	gotoXY(55, 28); puts("¹®Á¦´Â ÃÊ·Ï»öÀ¸·Î Ç¥½Ã, Á¤´ä ÀÔ·Â ÈÄ ¿£ÅÍ¸¦ ´­·¯ ÁøÇàÇÕ´Ï´Ù.");
+	gotoXY(55, 28); puts("ë¬¸ì œëŠ” ì´ˆë¡ìƒ‰ìœ¼ë¡œ í‘œì‹œ, ì •ë‹µ ì…ë ¥ í›„ ì—”í„°ë¥¼ ëˆŒëŸ¬ ì§„í–‰í•©ë‹ˆë‹¤.");
 	Box(20, 4, 100, 8, WHITE);
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GREEN);
 
@@ -1592,7 +1592,7 @@ int k_s_text(char type){
 			random = ((rand() % 50) + 1);	
 		}
 		if(kt == NULL){
-			printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+			printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 		}
 		else{
 			for(i=0; i<50; i++){
@@ -1616,7 +1616,7 @@ int k_s_text(char type){
 			random = ((rand() % 50) + 1);	
 		}
 		if(kt == NULL){
-			printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+			printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 		}
 		else{
 			for(i=0; i<50; i++){
@@ -1640,7 +1640,7 @@ int k_s_text(char type){
 			random = ((rand() % 50) + 1);	
 		}
 		if(kt == NULL){
-			printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+			printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 		}
 		else{
 			for(i=0; i<50; i++){
@@ -1665,7 +1665,7 @@ int k_s_text(char type){
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 	Box(3, 24, 116, 26, WHITE);
 	gotoXY(5, 25);
-	printf("ÀÔ·Â : %100c", ' ');
+	printf("ì…ë ¥ : %100c", ' ');
 	gotoXY(15, 25);
 	disp(left, correct, wrong); 
 	
@@ -1696,9 +1696,9 @@ int k_s_text(char type){
 				}
 			}
 
-			// ¿£ÅÍ
+			// ì—”í„°
 			else if (ch == 13) {
-				//answer (\n) Á¦°Å, ¾øÀ¸¸é ÀÚ²Ù Æ²¸² 
+				//answer (\n) ì œê±°, ì—†ìœ¼ë©´ ìê¾¸ í‹€ë¦¼ 
 				gotoXY(57, 15);	
 				char *ptr = answer[0];
 				while(*ptr != '\n') {
@@ -1706,7 +1706,7 @@ int k_s_text(char type){
 				}
 				*ptr = '\0';
 //				printf("%d", strcmp(input, answer[0]));
-				// Á¤´ä
+				// ì •ë‹µ
 				if(strcmp(input, answer[0])== 0) {
 					FLAG = 1;
 					correct += 1;
@@ -1722,19 +1722,19 @@ int k_s_text(char type){
 					left -= 1;
 
 					gotoXY(5, 25);
-					printf("ÀÔ·Â : %100c", ' ');
+					printf("ì…ë ¥ : %100c", ' ');
 					gotoXY(15, 25);
 				}
-				//È­¸éÀÇ ³²´Â ±ÛÀÚ Á¦°Å 
+				//í™”ë©´ì˜ ë‚¨ëŠ” ê¸€ì ì œê±° 
 				system("cls");
-				gotoXY(45, 2); printf("ÂªÀº ±Û  ¿¬  ½À  -  ¿µ  ¾î");
+				gotoXY(45, 2); printf("ì§§ì€ ê¸€  ì—°  ìŠµ  -  ì˜  ì–´");
 				Box(20, 4, 100, 8, WHITE);
 				Box(15, 9, 105, 23, WHITE);
 				Box(3, 24, 116, 26, WHITE);
-				gotoXY(55, 28); puts("¹®Á¦´Â ÃÊ·Ï»öÀ¸·Î Ç¥½Ã, Á¤´ä ÀÔ·Â ÈÄ ¿£ÅÍ¸¦ ´­·¯ ÁøÇàÇÕ´Ï´Ù.");
+				gotoXY(55, 28); puts("ë¬¸ì œëŠ” ì´ˆë¡ìƒ‰ìœ¼ë¡œ í‘œì‹œ, ì •ë‹µ ì…ë ¥ í›„ ì—”í„°ë¥¼ ëˆŒëŸ¬ ì§„í–‰í•©ë‹ˆë‹¤.");
 			}
 
-			// ¹®ÀÚ ÀÔ·Â
+			// ë¬¸ì ì…ë ¥
 			else {
 				input[count++] = ch;
 				ch = _getch();
@@ -1757,7 +1757,7 @@ int k_s_text(char type){
 			Box(15, 9, 105, 23, WHITE);
 			Box(3, 24, 116, 26, WHITE);
 			gotoXY(5, 25);
-			printf("ÀÔ·Â : %100c", ' ');
+			printf("ì…ë ¥ : %100c", ' ');
 			
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GREEN);
 			
@@ -1767,7 +1767,7 @@ int k_s_text(char type){
 					random = ((rand() % 50) + 1);	
 				}
 				if(kt == NULL){
-					printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+					printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 				}
 				else{
 					for(i=0; i<1; i++){
@@ -1784,7 +1784,7 @@ int k_s_text(char type){
 					random = ((rand() % 50) + 1);	
 				}
 				if(kt == NULL){
-					printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+					printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 				}
 				else{
 					for(i=0; i<1; i++){
@@ -1801,7 +1801,7 @@ int k_s_text(char type){
 					random = ((rand() % 50) + 1);	
 				}
 				if(kt == NULL){
-					printf("ÆÄÀÏ ÀĞ±â¸¦ ½ÇÆĞÇß½À´Ï´Ù.");
+					printf("íŒŒì¼ ì½ê¸°ë¥¼ ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
 				}
 				else{
 					for(i=0; i<1; i++){
@@ -1867,38 +1867,38 @@ int record(char type){
 	system("cls");
 	
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
-	gotoXY(75, 28); puts("¹æÇâÅ°·Î Ä¿¼­¸¦ ÀÌµ¿, ¿£ÅÍ·Î ¼±ÅÃÇÏ¼¼¿ä.");
+	gotoXY(75, 28); puts("ë°©í–¥í‚¤ë¡œ ì»¤ì„œë¥¼ ì´ë™, ì—”í„°ë¡œ ì„ íƒí•˜ì„¸ìš”.");
 
 	while (1) {
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
-		gotoXY(x1, y[now]); printf("¢º");
-		gotoXY(x2, y[now]); printf("¢¸");
+		gotoXY(x1, y[now]); printf("â–¶");
+		gotoXY(x2, y[now]); printf("â—€");
 		
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 		gotoXY(46, 2);
-		if(rcd[0] == 1) printf("ÃÖ±Ù ½ÇÇàÇÑ ¿¬½À : ÀÚ¸® ¿¬½À");
-		else if(rcd[0] == 2) printf("ÃÖ±Ù ½ÇÇàÇÑ ¿¬½À : ´Ü¾î ¿¬½À");
-		else if(rcd[0] == 3) printf("ÃÖ±Ù ½ÇÇàÇÑ ¿¬½À : ÂªÀº ±Û ¿¬½À");
-		else printf("ÃÖ±Ù ½ÇÇàÇÑ ¿¬½À : ±â·Ï ¾øÀ½");
-		gotoXY(42, 6); printf("³¯Â¥ : 			%08d", rcd[1]);
-		gotoXY(42, 8); printf("¸ñÇ¥ °³¼ö :			%d", rcd[2]);
-		gotoXY(42, 10); printf("°É¸° ½Ã°£ :			%04d", rcd[3]);
-		gotoXY(42, 12); printf("Á¤´ä :			%d", rcd[4]);
-		gotoXY(42, 14); printf("¿À´ä :			%d", rcd[5]);
-		gotoXY(42, 16); printf("Á¤È®µµ :			%d", rcd[6]);
+		if(rcd[0] == 1) printf("ìµœê·¼ ì‹¤í–‰í•œ ì—°ìŠµ : ìë¦¬ ì—°ìŠµ");
+		else if(rcd[0] == 2) printf("ìµœê·¼ ì‹¤í–‰í•œ ì—°ìŠµ : ë‹¨ì–´ ì—°ìŠµ");
+		else if(rcd[0] == 3) printf("ìµœê·¼ ì‹¤í–‰í•œ ì—°ìŠµ : ì§§ì€ ê¸€ ì—°ìŠµ");
+		else printf("ìµœê·¼ ì‹¤í–‰í•œ ì—°ìŠµ : ê¸°ë¡ ì—†ìŒ");
+		gotoXY(42, 6); printf("ë‚ ì§œ : 			%08d", rcd[1]);
+		gotoXY(42, 8); printf("ëª©í‘œ ê°œìˆ˜ :			%d", rcd[2]);
+		gotoXY(42, 10); printf("ê±¸ë¦° ì‹œê°„ :			%04d", rcd[3]);
+		gotoXY(42, 12); printf("ì •ë‹µ :			%d", rcd[4]);
+		gotoXY(42, 14); printf("ì˜¤ë‹µ :			%d", rcd[5]);
+		gotoXY(42, 16); printf("ì •í™•ë„ :			%d", rcd[6]);
 		Box(20, 4, 100, 18, WHITE);
 		
 		if (now == 0) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 		else SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GRAY);
-		gotoXY(x1 + 4, y[0]); printf("ÀÌÀü  ±â·Ï");
+		gotoXY(x1 + 4, y[0]); printf("ì´ì „  ê¸°ë¡");
 		
 		if (now == 1) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 		else SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GRAY);
-		gotoXY(x1 + 4, y[1]); printf("´ÙÀ½  ±â·Ï");
+		gotoXY(x1 + 4, y[1]); printf("ë‹¤ìŒ  ê¸°ë¡");
 
 		if (now == 2) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 		else SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GRAY);
-		gotoXY(x1 + 5, y[2]); printf("µÚ·Î°¡±â");
+		gotoXY(x1 + 5, y[2]); printf("ë’¤ë¡œê°€ê¸°");
 		Box(46, 19, 73, 25, WHITE);
 		puts(" ");
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
@@ -1926,7 +1926,7 @@ int record(char type){
 			}
 			continue;
 		}
-		// ¼±ÅÃ È¤Àº Á¾·á
+		// ì„ íƒ í˜¹ì€ ì¢…ë£Œ
 		else if (c == 13) break;
 		else if (c == 27) {
 			now = -1;
@@ -1942,18 +1942,18 @@ int choose(char type){
 
 	system("cls");
 
-	gotoXY(53, 4); printf("Å¸  ÀÚ  ¿¬  ½À");
+	gotoXY(53, 4); printf("íƒ€  ì  ì—°  ìŠµ");
 	
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
-	gotoXY(75, 28); puts("¹æÇâÅ°·Î Ä¿¼­¸¦ ÀÌµ¿, ¿£ÅÍ·Î ¼±ÅÃÇÏ¼¼¿ä.");
+	gotoXY(75, 28); puts("ë°©í–¥í‚¤ë¡œ ì»¤ì„œë¥¼ ì´ë™, ì—”í„°ë¡œ ì„ íƒí•˜ì„¸ìš”.");
 
 	while (1) {
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
-		gotoXY(x1, y[now]); printf("¢º");
-		gotoXY(x2, y[now]); printf("¢¸");
+		gotoXY(x1, y[now]); printf("â–¶");
+		gotoXY(x2, y[now]); printf("â—€");
 		
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
-		gotoXY(50, 9); puts("¸ñÇ¥ °³¼ö¸¦ ¼±ÅÃÇÏ¼¼¿ä.");
+		gotoXY(50, 9); puts("ëª©í‘œ ê°œìˆ˜ë¥¼ ì„ íƒí•˜ì„¸ìš”.");
 		Box(20, 8, 100, 10, WHITE);
 		
 		if (now == 0) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
@@ -1970,7 +1970,7 @@ int choose(char type){
 
 		if (now == 3) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 		else SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GRAY);
-		gotoXY(x1 + 5, y[3]); printf("µÚ·Î°¡±â");
+		gotoXY(x1 + 5, y[3]); printf("ë’¤ë¡œê°€ê¸°");
 		Box(46, 14, 73, 26, WHITE);
 		puts(" ");
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
@@ -1998,7 +1998,7 @@ int choose(char type){
 			}
 			continue;
 		}
-		// ¼±ÅÃ È¤Àº Á¾·á
+		// ì„ íƒ í˜¹ì€ ì¢…ë£Œ
 		else if (c == 13) break;
 		else if (c == 27) {
 			now = -1;
@@ -2029,7 +2029,7 @@ int endpg(char type, int tresult, int p, int correct, int wrong){
 	udat = fopen("udata.txt", "a+");
 	if(udat == NULL){
 		system("cls");
-		printf("½ÇÆĞ");
+		printf("ì‹¤íŒ¨");
 	}
 	else{
 		fprintf(udat, "%d\n", tp);
@@ -2042,31 +2042,31 @@ int endpg(char type, int tresult, int p, int correct, int wrong){
 	}
 	fclose(udat);
 
-	gotoXY(50, 3); printf("ÀÚ  ¸®  ¿¬  ½À  °á  °ú");
+	gotoXY(50, 3); printf("íƒ€  ì  ì—°  ìŠµ  ê²°  ê³¼");
 	
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
-	gotoXY(75, 28); puts("¹æÇâÅ°·Î Ä¿¼­¸¦ ÀÌµ¿, ¿£ÅÍ·Î ¼±ÅÃÇÏ¼¼¿ä.");
+	gotoXY(75, 28); puts("ë°©í–¥í‚¤ë¡œ ì»¤ì„œë¥¼ ì´ë™, ì—”í„°ë¡œ ì„ íƒí•˜ì„¸ìš”.");
 
 	while (1) {
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
-		gotoXY(x1, y[now]); printf("¢º");
-		gotoXY(x2, y[now]); printf("¢¸");
+		gotoXY(x1, y[now]); printf("â–¶");
+		gotoXY(x2, y[now]); printf("â—€");
 		
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
-		gotoXY(48, 8); printf("¸ñÇ¥ °³¼ö :	%d", p);
-		gotoXY(48, 10); printf("°É¸° ½Ã°£ :	%02d%02d", m, s);
-		gotoXY(48, 12); printf("Á¤´ä :		%d", correct);
-		gotoXY(48, 14); printf("¿À´ä :		%d", wrong);
-		gotoXY(48, 16); printf("Á¤È®µµ :	%d", accu);
+		gotoXY(48, 8); printf("ëª©í‘œ ê°œìˆ˜ :	%d", p);
+		gotoXY(48, 10); printf("ê±¸ë¦° ì‹œê°„ :	%02d%02d", m, s);
+		gotoXY(48, 12); printf("ì •ë‹µ :		%d", correct);
+		gotoXY(48, 14); printf("ì˜¤ë‹µ :		%d", wrong);
+		gotoXY(48, 16); printf("ì •í™•ë„ :	%d", accu);
 		Box(20, 6, 100, 18, WHITE);
 		
 		if (now == 0) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 		else SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GRAY);
-		gotoXY(x1 + 6, y[0]); printf("ÀçµµÀü");
+		gotoXY(x1 + 6, y[0]); printf("ì¬ë„ì „");
 
 		if (now == 1) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 		else SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GRAY);
-		gotoXY(x1 + 5, y[1]); printf("µÚ·Î°¡±â");
+		gotoXY(x1 + 5, y[1]); printf("ë’¤ë¡œê°€ê¸°");
 		Box(46, 19, 73, 25, WHITE);
 		puts(" ");
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
@@ -2094,7 +2094,7 @@ int endpg(char type, int tresult, int p, int correct, int wrong){
 			}
 			continue;
 		}
-		// ¼±ÅÃ È¤Àº Á¾·á
+		// ì„ íƒ í˜¹ì€ ì¢…ë£Œ
 		else if (c == 13) break;
 		else if (c == 27) {
 			now = -1;
@@ -2131,44 +2131,44 @@ int mainMenu() {
 
 	system("cls");
 
-	gotoXY(53, 4); printf("Å¸  ÀÚ  ¿¬  ½À");
+	gotoXY(53, 4); printf("íƒ€  ì  ì—°  ìŠµ");
 	
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
-	gotoXY(75, 28); puts("¹æÇâÅ°·Î Ä¿¼­¸¦ ÀÌµ¿, ¿£ÅÍ·Î ¼±ÅÃÇÏ¼¼¿ä.");
+	gotoXY(75, 28); puts("ë°©í–¥í‚¤ë¡œ ì»¤ì„œë¥¼ ì´ë™, ì—”í„°ë¡œ ì„ íƒí•˜ì„¸ìš”.");
 
 	while (1) {
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
-		gotoXY(x1, y[now]); printf("¢º");
-		gotoXY(x2, y[now]); printf("¢¸");
+		gotoXY(x1, y[now]); printf("â–¶");
+		gotoXY(x2, y[now]); printf("â—€");
 		
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 		gotoXY(42, 9); 
-		if(rcd[0] == 1) printf("ÃÖ±Ù ½ÇÇàÇÑ ¿¬½À :	ÀÚ¸® ¿¬½À");
-		else if(rcd[0] == 2) printf("ÃÖ±Ù ½ÇÇàÇÑ ¿¬½À :	´Ü¾î ¿¬½À");
-		else if(rcd[0] == 3) printf("ÃÖ±Ù ½ÇÇàÇÑ ¿¬½À :	ÂªÀº ±Û ¿¬½À");
-		else printf("ÃÖ±Ù ½ÇÇàÇÑ ¿¬½À :	±â·Ï ¾øÀ½");
-		gotoXY(27, 11); printf("ÃÖ±Ù ±â·Ï(¸ñÇ¥/°É¸°½Ã°£/Á¤´ä/¿À´ä/Á¤È®µµ) : %d / %04d / %d / %d / %d", rcd[2], rcd[3], rcd[4], rcd[5], rcd[6], rcd[7]);
+		if(rcd[0] == 1) printf("ìµœê·¼ ì‹¤í–‰í•œ ì—°ìŠµ :	ìë¦¬ ì—°ìŠµ");
+		else if(rcd[0] == 2) printf("ìµœê·¼ ì‹¤í–‰í•œ ì—°ìŠµ :	ë‹¨ì–´ ì—°ìŠµ");
+		else if(rcd[0] == 3) printf("ìµœê·¼ ì‹¤í–‰í•œ ì—°ìŠµ :	ì§§ì€ ê¸€ ì—°ìŠµ");
+		else printf("ìµœê·¼ ì‹¤í–‰í•œ ì—°ìŠµ :	ê¸°ë¡ ì—†ìŒ");
+		gotoXY(27, 11); printf("ìµœê·¼ ê¸°ë¡(ëª©í‘œ/ê±¸ë¦°ì‹œê°„/ì •ë‹µ/ì˜¤ë‹µ/ì •í™•ë„) : %d / %04d / %d / %d / %d", rcd[2], rcd[3], rcd[4], rcd[5], rcd[6], rcd[7]);
 		Box(20, 7, 100, 13, WHITE);
 		
 		if (now == 0) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 		else SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GRAY);
-		gotoXY(x1 + 4, y[0]); printf("ÀÚ¸®  ¿¬½À");
+		gotoXY(x1 + 4, y[0]); printf("ìë¦¬  ì—°ìŠµ");
 		
 		if (now == 1) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 		else SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GRAY);
-		gotoXY(x1 + 4, y[1]); printf("´Ü¾î  ¿¬½À");
+		gotoXY(x1 + 4, y[1]); printf("ë‹¨ì–´  ì—°ìŠµ");
 
 		if (now == 2) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 		else SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GRAY);
-		gotoXY(x1 + 3, y[2]); printf("ÂªÀº ±Û ¿¬½À");
+		gotoXY(x1 + 3, y[2]); printf("ì§§ì€ ê¸€ ì—°ìŠµ");
 
 		if (now == 3) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 		else SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GRAY);
-		gotoXY(x1 + 4, y[3]); printf("±â·Ï  È®ÀÎ");
+		gotoXY(x1 + 4, y[3]); printf("ê¸°ë¡  í™•ì¸");
 
 		if (now == 4) SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), RED);
 		else SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), GRAY);
-		gotoXY(x1 + 5, y[4]); printf("Á¾    ·á");
+		gotoXY(x1 + 5, y[4]); printf("ì¢…    ë£Œ");
 		Box(46, 14, 73, 26, WHITE);
 		puts(" ");
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
@@ -2196,7 +2196,7 @@ int mainMenu() {
 			}
 			continue;
 		}
-		// ¼±ÅÃ È¤Àº Á¾·á
+		// ì„ íƒ í˜¹ì€ ì¢…ë£Œ
 		else if (c == 13) break;
 		else if (c == 27) {
 			now = -1;
@@ -2211,26 +2211,26 @@ int main(int argc, char* argv[]) {
 	char keep;
 	
 	//UI 
-	system("title Å¸ÀÚ ¿¬½À");
+	system("title íƒ€ì ì—°ìŠµ");
 	system("mode con cols=120 lines=30");
 
 	while (1) {
 		system("cls");
 
-		// Ç×¸ñ ¼±ÅÃ
+		// í•­ëª© ì„ íƒ
 		selectedMenu = mainMenu();
 
 		system("cls");
 
 		switch (selectedMenu) {
-			// Á¾·á
+			// ì¢…ë£Œ
 			case -1: {
 				system("cls");
 				gotoXY(50, 3);
-				puts("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù\n\n\n\n\n\n\n\n");
+				puts("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤\n\n\n\n\n\n\n\n");
 				return 0;
 			}
-			// ÀÚ¸® ¿¬½À 
+			// ìë¦¬ ì—°ìŠµ 
 			case 0:{
 				while (1) {
 					keep = letter(selectedMenu);
@@ -2282,7 +2282,7 @@ int main(int argc, char* argv[]) {
 				}
 				break;
 			}
-			//´Ü¾î ¿¬½À 
+			//ë‹¨ì–´ ì—°ìŠµ 
 			case 1:{
 				while (1) {
 					keep = word(selectedMenu);
@@ -2328,7 +2328,7 @@ int main(int argc, char* argv[]) {
 				}
 				break;
 			}
-			//ÂªÀº ±Û ¿¬½À 
+			//ì§§ì€ ê¸€ ì—°ìŠµ 
 			case 2: {
 				while (1) {
 					keep = s_text(selectedMenu);
@@ -2374,7 +2374,7 @@ int main(int argc, char* argv[]) {
 				}
 				break;
 			}
-			//±â·Ï È®ÀÎ 
+			//ê¸°ë¡ í™•ì¸ 
 			case 3: {
 				while (1) {
 					keep = record(selectedMenu);
@@ -2384,11 +2384,11 @@ int main(int argc, char* argv[]) {
 				}
 				break;
 			}
-			//Á¾·á 
+			//ì¢…ë£Œ 
 			case 4: {
 				system("cls");
 				gotoXY(50, 3);
-				puts("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù\n\n\n\n\n\n\n\n");
+				puts("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤\n\n\n\n\n\n\n\n");
 				return 0;
 			}
 		}
